@@ -157,7 +157,6 @@ gits_commit_test_subparser.set_defaults(func=gits_commit_func_with_pytest)
 gits_stats_subparser = subparsers.add_parser('stats')
 gits_stats_subparser.set_defaults(func=get_stats)
 
-# new features
 gits_status_subparser=subparsers.add_parser('commit_tree')
 gits_status_subparser.set_defaults(func=gits_commit_tree)
 
@@ -166,6 +165,14 @@ gits_tag_subparser.add_argument("tag_name", action="store_true", help="1. Create
 gits_tag_subparser.set_defaults(func=gits_tag_func)
 gits_status_subparser=subparsers.add_parser('describe')
 gits_status_subparser.set_defaults(func=gits_describe)
+
+# Nicknames for gits commands
+gits_nickname_subparser = subparsers.add_parser('nickname', help='Create, remove, update, list nicknames for gits commands')
+gits_nickname_subparser.set_defaults(func=lambda _ : print("nickname"))
+
+# Quickly change git command alias's
+gits_alias_subparser = subparsers.add_parser('alias', help='Create, remove, update, list git alias properties')
+gits_nickname_subparser.set_defaults(func=lambda _ : print("alias"))
 
 
 args = parser.parse_args()
