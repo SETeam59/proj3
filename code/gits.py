@@ -196,6 +196,17 @@ remove_nickname_parser.set_defaults(func=remove_nickname)
 # alias_parser = subparsers.add_parser('alias', help='Create, remove, update, list git alias properties')
 # alias_parser.set_defaults(func=lambda _ : print("alias"))
 
+valid_commands = [obj for obj in parser._actions[1].choices]
+nicknames = read_nicknames_settings()
+arguments = sys.argv[1:]
 
-args = parser.parse_args()
+if len(arguments) > 0:
+    if arguments[0] in valid_commands:
+        pass
+    else:
+        if arguments[0] in nicknames:
+            arguments[0] = nicknames[arguments[0]]
+
+print(arguments)
+args = parser.parse_args(args=arguments)
 args.func(args)
