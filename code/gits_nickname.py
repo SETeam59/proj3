@@ -42,9 +42,24 @@ def remove_nickname(args):
         print(f"Nickname '{args.nickname}' not found.")
 
 def update_nickname(args):
-    print("Update nickname")
-    print(args)
+    nicknames = read_nicknames_settings()
+    if args.o in nicknames:
+        nicknames[args.n] = nicknames.pop(args.o)
+        write_nickname_settings(nicknames)
+        print(f"Nickname '{args.o}' updated to {args.n}.")
+    else:
+        print(f"Nickname '{args.o}' not found.")
 
 def list_nickname(args):
-    print("List nickname")
-    print(args)
+    nicknames = read_nicknames_settings()
+    # Go through every nickname in the settings
+    if len(args.nicknames) == 0:
+        for n, c in nicknames.items():
+            print(f"{n} -> {c}")
+    # Go though every nickname listed by the user
+    else:
+        invalid = []
+        for n in args.nicknames:
+            print(f"{n} -> {nicknames[n]}") if n in nicknames else invalid.append(n)
+        for i in invalid:
+            print(f"Invalid nickname: {i}")

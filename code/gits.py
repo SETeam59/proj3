@@ -173,23 +173,27 @@ nickname_parser = subparsers.add_parser('nickname', help='Create, remove, update
 nickname_parser.set_defaults(func=nickname_default)
 nickname_subparsers = nickname_parser.add_subparsers()
 
-# Subparser for add
+# Nickname subparser for add
 add_nickname_parser = nickname_subparsers.add_parser('add', help='Add a nickname')
 add_nickname_parser.add_argument('-c', required=True, help='Gits Command')
 add_nickname_parser.add_argument('-n', required=True, help='Nickname')
 add_nickname_parser.set_defaults(func=add_nickname)
 
-# Subparser for remove
+# Nickname subparser for remove
 remove_nickname_parser = nickname_subparsers.add_parser('remove', help='Remove a nickname')
-remove_nickname_parser.add_argument('nickname')
+remove_nickname_parser.add_argument('nickname', help='Nickname to be deleted')
 remove_nickname_parser.set_defaults(func=remove_nickname)
 
-# nickname_group = nickname_parser.add_mutually_exclusive_group(required=True)
-# nickname_group.add_argument('-a', '--add', action='store_true', help='Add a nickname')
-# nickname_group.add_argument('-r', '--remove', action='store_true', help='Remove a nickname')
-# nickname_group.add_argument('-u', '--update', action='store_true', help='Update a nickname')
-# nickname_group.add_argument('-l', '--list', action='store_true', help='List all nicknames')
+# Nickname subparser for update
+update_nickname_parser = nickname_subparsers.add_parser('update', help='Update a nickname')
+update_nickname_parser.add_argument('-o', required=True, help='Old Nickname')
+update_nickname_parser.add_argument('-n', required=True, help='New Nickname')
+update_nickname_parser.set_defaults(func=update_nickname)
 
+# Nickname subparser for list
+list_nickname_parser = nickname_subparsers.add_parser('list', help='List a nickname')
+list_nickname_parser.add_argument('nicknames', help='Nicknames to be listed', nargs='*')
+list_nickname_parser.set_defaults(func=list_nickname)
 
 
 # # Quickly change git command alias's
@@ -207,6 +211,6 @@ if len(arguments) > 0:
         if arguments[0] in nicknames:
             arguments[0] = nicknames[arguments[0]]
 
-print(arguments)
 args = parser.parse_args(args=arguments)
 args.func(args)
+print()
