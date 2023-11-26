@@ -1,3 +1,5 @@
 pytest
 mock
 coverage
+python3-tk
+Pillow
