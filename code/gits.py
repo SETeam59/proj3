@@ -4,6 +4,7 @@ import sys
 import argparse
 from gits_logging import init_gits_logger
 from gits_hello import gits_hello_world
+from gits_cmd_history import gits_cmd_history_func
 from gits_add import gits_add_func
 from gits_commit import gits_commit_func
 from gits_set import gits_set_func
@@ -42,6 +43,9 @@ subparsers = parser.add_subparsers()
 
 gits_hello_subparser = subparsers.add_parser('hello_world')
 gits_hello_subparser.set_defaults(func=gits_hello_world)
+
+gits_cmd_history_func_subparser = subparsers.add_parser('cmd_history')
+gits_cmd_history_func_subparser.set_defaults(func = gits_cmd_history_func)
 
 gits_set_subparser = subparsers.add_parser('set')
 gits_set_subparser.add_argument('--parent', help='git parent branch')
