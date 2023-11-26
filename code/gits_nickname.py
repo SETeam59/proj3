@@ -24,12 +24,14 @@ def nickname_default(args):
     print("For any gits command, you can use your own nickname!")
     print("Choose between add, remove, update, and list")
     print()
+    return True
 
 def add_nickname(args):
     nicknames = read_nicknames_settings()
     nicknames[args.n] = args.c
     write_nickname_settings(nicknames)
     print(f"Add nickname {args.n} for command {args.c}")
+    return True
    
 
 def remove_nickname(args):
@@ -38,8 +40,12 @@ def remove_nickname(args):
         del nicknames[args.nickname]
         write_nickname_settings(nicknames)
         print(f"Nickname '{args.nickname}' removed.")
+        return True
     else:
         print(f"Nickname '{args.nickname}' not found.")
+        return False
+
+    return True
 
 def update_nickname(args):
     nicknames = read_nicknames_settings()
@@ -47,9 +53,11 @@ def update_nickname(args):
         nicknames[args.n] = nicknames.pop(args.o)
         write_nickname_settings(nicknames)
         print(f"Nickname '{args.o}' updated to {args.n}.")
+        return True
     else:
         print(f"Nickname '{args.o}' not found.")
-
+        return False
+    
 def list_nickname(args):
     nicknames = read_nicknames_settings()
     # Go through every nickname in the settings
@@ -63,3 +71,5 @@ def list_nickname(args):
             print(f"{n} -> {nicknames[n]}") if n in nicknames else invalid.append(n)
         for i in invalid:
             print(f"Invalid nickname: {i}")
+
+    return True
