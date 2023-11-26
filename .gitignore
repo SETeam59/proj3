@@ -116,3 +116,6 @@ build-iPhoneSimulator/
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Nicknames settings
+nicknames.json
