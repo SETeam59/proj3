@@ -25,7 +25,7 @@ from gits_status import gits_status
 from gits_diff import gits_diff
 from gits_sync import gits_sync
 from gits_nickname import nickname_default, add_nickname, remove_nickname, list_nickname, update_nickname, read_nicknames_settings
-
+from gits_alias import default_alias, add_alias, remove_alias, list_alias, update_alias
 from gits_commit_with_pytest import gits_commit_func_with_pytest
 
 from gits_stats import get_stats
@@ -179,26 +179,42 @@ add_nickname_parser.add_argument('-c', required=True, help='Gits Command')
 add_nickname_parser.add_argument('-n', required=True, help='Nickname')
 add_nickname_parser.set_defaults(func=add_nickname)
 
-# Nickname subparser for remove
 remove_nickname_parser = nickname_subparsers.add_parser('remove', help='Remove a nickname')
 remove_nickname_parser.add_argument('nickname', help='Nickname to be deleted')
 remove_nickname_parser.set_defaults(func=remove_nickname)
 
-# Nickname subparser for update
 update_nickname_parser = nickname_subparsers.add_parser('update', help='Update a nickname')
-update_nickname_parser.add_argument('-o', required=True, help='Old Nickname')
-update_nickname_parser.add_argument('-n', required=True, help='New Nickname')
+update_nickname_parser.add_argument('-o', '--old', required=True, help='Old Nickname')
+update_nickname_parser.add_argument('-n', '--new', required=True, help='New Nickname')
 update_nickname_parser.set_defaults(func=update_nickname)
 
-# Nickname subparser for list
 list_nickname_parser = nickname_subparsers.add_parser('list', help='List a nickname')
 list_nickname_parser.add_argument('nicknames', help='Nicknames to be listed', nargs='*')
 list_nickname_parser.set_defaults(func=list_nickname)
 
 
-# # Quickly change git command alias's
-# alias_parser = subparsers.add_parser('alias', help='Create, remove, update, list git alias properties')
-# alias_parser.set_defaults(func=lambda _ : print("alias"))
+# Quickly change git command alias's
+alias_parser = subparsers.add_parser('alias', help='Create, remove, update, list git alias properties')
+alias_parser.set_defaults(func=default_alias)
+alias_subparsers = alias_parser.add_subparsers()
+
+add_alias_parser = alias_subparsers.add_parser('add', help='Add a git alias')
+add_alias_parser.add_argument('-c', required=True, help='Git Command')
+add_alias_parser.add_argument('-a', required=True, help='Alias')
+add_alias_parser.set_defaults(func=add_alias)
+
+remove_alias_parser = alias_subparsers.add_parser('remove', help='Remove a git alias')
+remove_alias_parser.add_argument('alias', help='Alias to be deleted')
+remove_alias_parser.set_defaults(func=remove_alias)
+
+update_alias_parser = alias_subparsers.add_parser('update', help='Update a git alias')
+update_alias_parser.add_argument('-o', '--old', required=True, help='Old Alias')
+update_alias_parser.add_argument('-n', '--new', required=True, help='New Alias')
+update_alias_parser.set_defaults(func=update_alias)
+
+list_alias_parser = alias_subparsers.add_parser('list', help='List git aliases')
+list_alias_parser.add_argument('aliases', help='Aliases to be listed', nargs='*')
+list_alias_parser.set_defaults(func=list_alias)
 
 valid_commands = [obj for obj in parser._actions[1].choices]
 nicknames = read_nicknames_settings()
