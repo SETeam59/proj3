@@ -40,19 +40,20 @@ if not logger_status:
     sys.exit(1)
 
 parser = argparse.ArgumentParser()
+parser.set_defaults(func = lambda _ : parser.print_help())
 subparsers = parser.add_subparsers()
 
-gits_hello_subparser = subparsers.add_parser('hello_world')
+gits_hello_subparser = subparsers.add_parser('hello_world', help='Print "hello world" to test gits integration')
 gits_hello_subparser.set_defaults(func=gits_hello_world)
 
 gits_cmd_history_func_subparser = subparsers.add_parser('cmd_history')
 gits_cmd_history_func_subparser.set_defaults(func = gits_cmd_history_func)
 
-gits_set_subparser = subparsers.add_parser('set')
+gits_set_subparser = subparsers.add_parser('set', help='Set the parent branch')
 gits_set_subparser.add_argument('--parent', help='git parent branch')
 gits_set_subparser.set_defaults(func=gits_set_func)
 
-gits_add_subparser = subparsers.add_parser('add')
+gits_add_subparser = subparsers.add_parser('add', help='Stage files')
 gits_add_subparser.add_argument('file_names',
                                 metavar='N',
                                 type=str,
@@ -61,7 +62,7 @@ gits_add_subparser.add_argument('file_names',
 gits_add_subparser.set_defaults(func=gits_add_func)
 
 
-gits_commit_subparser = subparsers.add_parser('commit')
+gits_commit_subparser = subparsers.add_parser('commit', help='Commit files')
 gits_commit_subparser.add_argument('-m',
                                    required=True,
                                    help='git commit message')
@@ -70,12 +71,12 @@ gits_commit_subparser.add_argument('--amend',
                                    help='amend commit message')
 gits_commit_subparser.set_defaults(func=gits_commit_func)
 
-gits_create_subparser = subparsers.add_parser('create')
+gits_create_subparser = subparsers.add_parser('create', help='Check out a new branch from local master')
 gits_create_subparser.add_argument('-b', help="branch name to create")
 gits_create_subparser.set_defaults(func=create_branch)
 
 
-gits_upstream_subparser = subparsers.add_parser('upstream')
+gits_upstream_subparser = subparsers.add_parser('upstream', help='Change the upstream branch')
 gits_upstream_subparser.add_argument('--remote',
                                      help='the remote branch name')
 gits_upstream_subparser.add_argument('--local',
@@ -84,7 +85,7 @@ gits_upstream_subparser.add_argument('--upstream',
                                      help="the upstream branch name")
 gits_upstream_subparser.set_defaults(func=upstream)
 
-gits_profile_subparser = subparsers.add_parser('profile', help='profie help')
+gits_profile_subparser = subparsers.add_parser('profile', help='Change git profile')
 gits_profile_subparser.set_defaults(func=gits_set_profile)
 gits_profile_subparser.add_argument('--email',
                                     required=True,
@@ -93,29 +94,29 @@ gits_profile_subparser.add_argument('--name',
                                     required=True,
                                     help='name to be used')
 
-gits_pr_subparser = subparsers.add_parser('sync', help='sync help')
+gits_pr_subparser = subparsers.add_parser('sync', help='Sync local master with remote master')
 gits_pr_subparser.set_defaults(func=gits_pr_update_func)
 gits_pr_subparser.add_argument('--upstream', nargs='?')
 
-gits_super_reset_subparser = subparsers.add_parser('super-reset')
+gits_super_reset_subparser = subparsers.add_parser('super-reset', help='Remove the current repository and clone it again')
 gits_super_reset_subparser.add_argument('--name', help="Name of the repository to super reset")
 gits_super_reset_subparser.set_defaults(func=super_reset)
 
-gits_rb_subparser = subparsers.add_parser('rebase', help='sync help')
+gits_rb_subparser = subparsers.add_parser('rebase', help='Automatically rebase off of master')
 gits_rb_subparser.set_defaults(func=gits_rebase)
 
-gits_reset_subparser = subparsers.add_parser('reset', help='sync help')
+gits_reset_subparser = subparsers.add_parser('reset', help='Hard reset on current branch')
 gits_reset_subparser.set_defaults(func=gits_reset)
 gits_reset_subparser.add_argument('--branch', required=True, help='branch to be used')
 
-gits_push_subparser = subparsers.add_parser('push')
+gits_push_subparser = subparsers.add_parser('push', help='Push all local changes up to origin')
 gits_push_subparser.set_defaults(func=gits_push_func)
 
-gits_add_subparser = subparsers.add_parser('checkout')
+gits_add_subparser = subparsers.add_parser('checkout', help='Switch branches')
 gits_add_subparser.add_argument('branch_name')
 gits_add_subparser.set_defaults(func=checkout)
 
-gits_add_subparser = subparsers.add_parser('unstage')
+gits_add_subparser = subparsers.add_parser('unstage', help='Move files from staging area to working directory')
 gits_add_subparser.add_argument('file_names',
                                 metavar='N',
                                 type=str,
@@ -123,10 +124,10 @@ gits_add_subparser.add_argument('file_names',
                                 help='all file names')
 gits_add_subparser.set_defaults(func=unstage)
 
-gits_status_subparser=subparsers.add_parser('status')
+gits_status_subparser=subparsers.add_parser('status', help='Display the state of the working directory')
 gits_status_subparser.set_defaults(func=gits_status)
 
-gits_diff_subparser=subparsers.add_parser('diff')
+gits_diff_subparser=subparsers.add_parser('diff', help='Shows difference commits, branches, files and more')
 gits_diff_subparser.set_defaults(func=gits_diff)
 
 # gits_sync_subparser=subparsers.add_parser('sync')
@@ -137,14 +138,14 @@ gits_init_subparser.add_argument("--bare", action="store_true", help="Omit the w
 gits_init_subparser.add_argument("--url", help="url for cloning an already existing repo")
 gits_init_subparser.set_defaults(func=gits_init_func)
 
-gits_all_branch_subparser = subparsers.add_parser('all-branch')
+gits_all_branch_subparser = subparsers.add_parser('all-branch', help='List all local and remote branches')
 gits_all_branch_subparser.set_defaults(func=gits_all_branch_func)
 
-gits_remote_branch_subparser = subparsers.add_parser('remote-branch')
+gits_remote_branch_subparser = subparsers.add_parser('remote-branch', help='List all remote branches')
 gits_remote_branch_subparser.set_defaults(func=gits_remote_branch_func)
 
 
-gits_commit_test_subparser = subparsers.add_parser('commit_with_test')
+gits_commit_test_subparser = subparsers.add_parser('commit_with_test', help='Run tests to ensure success and then commits')
 gits_commit_test_subparser.add_argument('-m',
                                    required=True,
                                    help='git commit message')
@@ -155,10 +156,10 @@ gits_commit_test_subparser.set_defaults(func=gits_commit_func_with_pytest)
 
 
 
-gits_stats_subparser = subparsers.add_parser('stats')
+gits_stats_subparser = subparsers.add_parser('stats', help='View user statistics')
 gits_stats_subparser.set_defaults(func=get_stats)
 
-gits_status_subparser=subparsers.add_parser('commit_tree')
+gits_status_subparser=subparsers.add_parser('commit_tree', help='Print visual representation of commit history')
 gits_status_subparser.set_defaults(func=gits_commit_tree)
 
 gits_tag_subparser = subparsers.add_parser('tag', help='Create, list or checkout tags')
