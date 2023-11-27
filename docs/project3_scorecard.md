@@ -2,7 +2,7 @@
 | --- | --- | --- |
 | Video |  | TODO |
 | Workload is spread over the whole team (one team member is often X times more productive than the others...) | 3 | Responsibility was spread evenly between the group members in terms of functionality but nevertheless, here is a track record that everyone is contributing a lot|
-| Number of commits | 3 | Overall, there were a significant number of quality commits - [Commit History](https://github.com/SETeam59/proj3/commits/master) |
+| Number of commits | 3 | Overall, there were a significant number of quality commits - [Commit History](https://github.com/SETeam59/proj3/commits/master)|
 | Number of commits: by different people | 3 | Note that Saketh commited code under a different account "svruddar" [GitHub Commits](https://github.com/SETeam59/proj3/graphs/contributors) |
 | Issues reports: there are many | 3 | All code changes had relevant issues they were linked to: [GitHub Issues](https://github.com/SETeam59/proj3/issues) |
 | Issues are being closed | 3 | Issues are closed after code-related branches were closed |
@@ -22,7 +22,7 @@
 | Test cases are routinely executed | 3 | tests run before commiting code with the commit_with_test command |
 | The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up | 3 | [Contributing.md](https://github.com/SETeam59/proj3/blob/master/CONTRIBUTING.md) |
 | Issues are discussed before they are closed | 3 | Relevant discussion is included in Issues |
-| Chat channel: exists | 3 | Show WhatsApp Group (TODO) |
+| Chat channel: exists | 3 | [WhatsApp Group](https://github.com/SETeam59/proj3/blob/master/docs/Team%2059%20WhatsApp%20Group.png) |
 | Test cases: a large proportion of the issues related to handling failing cases |  | TODO |
 | Evidence that the whole team is using the same tools: everyone can get to all tools and files | 3 | All development tools used are free, and the dependency list is available to everyone on GH |
 | Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people) | 3 | Installation steps and requirements.txt file ensure that everyone is using the same tools for development |
