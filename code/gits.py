@@ -40,14 +40,14 @@ if not logger_status:
     sys.exit(1)
 
 parser = argparse.ArgumentParser()
-parser.set_defaults(func = lambda _ : parser.print_help())
+parser.set_defaults(func=lambda _: parser.print_help())
 subparsers = parser.add_subparsers()
 
 gits_hello_subparser = subparsers.add_parser('hello_world', help='Print "hello world" to test gits integration')
 gits_hello_subparser.set_defaults(func=gits_hello_world)
 
 gits_cmd_history_func_subparser = subparsers.add_parser('cmd_history')
-gits_cmd_history_func_subparser.set_defaults(func = gits_cmd_history_func)
+gits_cmd_history_func_subparser.set_defaults(func=gits_cmd_history_func)
 
 gits_set_subparser = subparsers.add_parser('set', help='Set the parent branch')
 gits_set_subparser.add_argument('--parent', help='git parent branch')
@@ -124,13 +124,13 @@ gits_add_subparser.add_argument('file_names',
                                 help='all file names')
 gits_add_subparser.set_defaults(func=unstage)
 
-gits_status_subparser=subparsers.add_parser('status', help='Display the state of the working directory')
+gits_status_subparser = subparsers.add_parser('status', help='Display the state of the working directory')
 gits_status_subparser.set_defaults(func=gits_status)
 
-gits_diff_subparser=subparsers.add_parser('diff', help='Shows difference commits, branches, files and more')
+gits_diff_subparser = subparsers.add_parser('diff', help='Shows difference commits, branches, files and more')
 gits_diff_subparser.set_defaults(func=gits_diff)
 
-gits_sync_subparser=subparsers.add_parser('sync')
+gits_sync_subparser = subparsers.add_parser('sync')
 gits_sync_subparser.set_defaults(func=gits_sync)
 
 gits_init_subparser = subparsers.add_parser('init', help='Initialize local git repository')
@@ -147,25 +147,23 @@ gits_remote_branch_subparser.set_defaults(func=gits_remote_branch_func)
 
 gits_commit_test_subparser = subparsers.add_parser('commit_with_test', help='Run tests to ensure success and then commits')
 gits_commit_test_subparser.add_argument('-m',
-                                   required=True,
-                                   help='git commit message')
+                                        required=True,
+                                        help='git commit message')
 gits_commit_test_subparser.add_argument('--amend',
-                                   action='store_true',
-                                   help='amend commit message')
+                                        action='store_true',
+                                        help='amend commit message')
 gits_commit_test_subparser.set_defaults(func=gits_commit_func_with_pytest)
-
-
 
 gits_stats_subparser = subparsers.add_parser('stats', help='View user statistics')
 gits_stats_subparser.set_defaults(func=get_stats)
 
-gits_status_subparser=subparsers.add_parser('commit_tree', help='Print visual representation of commit history')
+gits_status_subparser = subparsers.add_parser('commit_tree', help='Print visual representation of commit history')
 gits_status_subparser.set_defaults(func=gits_commit_tree)
 
 gits_tag_subparser = subparsers.add_parser('tag', help='Create, list or checkout tags')
 gits_tag_subparser.add_argument("tag_name", action="store_true", help="1. Create a new tag 2.List all stored tags 3.View the state of the repo at a tag using checkout")
 gits_tag_subparser.set_defaults(func=gits_tag_func)
-gits_status_subparser=subparsers.add_parser('describe')
+gits_status_subparser = subparsers.add_parser('describe')
 gits_status_subparser.set_defaults(func=gits_describe)
 
 

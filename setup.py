@@ -8,16 +8,15 @@ setup(
     author_email='dtpurana@ncsu.edu',
     packages=find_packages(),
     tests_require=['pytest'],
-      classifiers=[
+    classifiers=[
           "License :: OSI Approved :: MIT License",
           "Programming Language :: Python",
           "Development Status :: 3 - Alpha",
           "Intended Audience :: Developers",
           "Topic :: GITS Project",
-      ],
-
-      license='MIT',
-      install_requires=[
+    ],
+    license='MIT',
+    install_requires=[
         'pytest',
-      ]
+    ]
 )

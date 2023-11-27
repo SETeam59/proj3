@@ -9,6 +9,7 @@ def parse_args(args):
     parser = argparse.ArgumentParser()
     return parser.parse_args(args)
 
+
 @patch("argparse.ArgumentParser.parse_args",return_value=argparse.Namespace())
 @patch("subprocess.Popen")
 def test_gits_remote_branch_happy(mock_var, mock_args):

@@ -1,11 +1,9 @@
 import argparse
 import os
 import sys
-
-sys.path.insert(1, os.getcwd())
-
 from gits_unstage import unstage
 from mock import patch, Mock
+sys.path.insert(1, os.getcwd())
 
 
 def parse_args(args):

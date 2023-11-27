@@ -2,11 +2,13 @@
 
 from subprocess import Popen, PIPE
 
+
 def gits_unit_test_check(args):
     """
     Function that commit files as staged in the git command line internface
     Performs operation as similar to git commit command.
-    Future additions : user can specify if the commit should be rejected , if the unit test fails.
+    Future additions : user can specify if the commit should be rejected ,
+    if the unit test fails.
     """
     try:
         subprocess_command = list()
@@ -19,13 +21,13 @@ def gits_unit_test_check(args):
 
         # print(stdout_as_str)
         if "failed" in stdout_as_str:
-            answer = input("The unit test cases failed, do you still wish to commit? Y/N ")
-            if answer=='Y':
+            answer = input("The unit test cases failed, do you still wish to "
+                           "commit? Y/N (Enter 'Y' to commit, 'N' to cancel):")
+            if answer == 'Y':
                 Popen('python3 gits_commit.py')
             else:
                 print('Commit aborted')
                 return False
-
 
     except Exception as e:
         print("ERROR: gits unit test check caught an exception")

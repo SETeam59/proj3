@@ -29,10 +29,12 @@ def execute_gits_command(text):
     except Exception as e:
         print("An error occurred: " + str(e))
 
+
 # Function to save command to history
 def save_command_to_history(command):
     with open('command_history.txt', 'a') as file:
         file.write(command + '\n')
+
 
 # Custom style for syntax highlighting
 style = Style.from_dict({

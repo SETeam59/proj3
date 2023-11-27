@@ -5,6 +5,7 @@ import gits_all_branch
 from mock import patch, Mock
 sys.path.insert(1, os.getcwd())
 
+
 def parse_args(args):
     parser = argparse.ArgumentParser()
     return parser.parse_args(args)

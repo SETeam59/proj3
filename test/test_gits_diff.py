@@ -10,7 +10,6 @@ sys.path.insert(1, os.getcwd())
 @patch("argparse.ArgumentParser.parse_args",
        return_value=argparse.Namespace())
 @patch("subprocess.Popen", return_value="anything")
-
 def test_gits_diff(mock_var, mock_args):
     """
     Function to test gits_diff, success case

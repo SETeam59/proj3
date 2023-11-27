@@ -1,6 +1,6 @@
-import gits_logging
 import subprocess
 from subprocess import Popen, PIPE
+
 
 def get_trunk_branch(args):
 	"""
@@ -15,37 +15,41 @@ def get_trunk_branch(args):
 		stdout, stderr = process.communicate()
 		stdout = stdout.decode("utf-8")
 		branches = list(filter(None, stdout.split("\n")))
-		trunk=branches[0].split("/")[1]
+		trunk = branches[0].split("/")[1]
 		return trunk
 
 	except Exception as e:
 		print("ERROR: gits branch command caught an exception")
 		print("ERROR: {}".format(str(e)))
 
+
 def get_cur_branch(args):
 	"""
 	Function to get the current branch
 	"""
 	try:
-		subprocess_git_branch=list()
+		subprocess_git_branch = list()
 		subprocess_git_branch.append("git")
 		subprocess_git_branch.append("branch")
-		process1=Popen(subprocess_git_branch, stdout=PIPE, stderr=PIPE)
-		stdout1,stderr1=process1.communicate()
-		branch=stdout1.decode("utf-8").split("\n")
+		process1 = Popen(subprocess_git_branch, stdout=PIPE, stderr=PIPE)
+		stdout1, stderr1 = process1.communicate()
+		branch = stdout1.decode("utf-8").split("\n")
 		
 		for b in branch:
 			if "*" in b:
-				return b.replace("*","").strip()
+				return b.replace("*", "").strip()
 
 	except Exception as e:
 		print("ERROR: gits branch command caught an exception")
 		print("ERROR: {}".format(str(e)))
-        	
+
+
 def gits_sync(args):
 	"""
-	Function to sync local master with remote master and rebases the current branch with remote branch branch.
-    Used when we want to go back to its stable state. Function is similar to git sync
+	Function to sync local master with remote master and
+	rebases the current branch with remote branch branch.
+	Used when we want to go back to its stable state. 
+	Function is similar to git sync
 	"""
 	print("Starting to sync...")
 	try:
@@ -55,16 +59,14 @@ def gits_sync(args):
 		untracked_stuff.append("--porcelain")
 		untracked_stuff.append("status")
 
-		process = subprocess.Popen(untracked_stuff,stdout=PIPE, stderr=PIPE)
+		process = subprocess.Popen(untracked_stuff, stdout=PIPE, stderr=PIPE)
 		stdout, stderr = process.communicate()
 		if stdout != b'':
 			print("Note: Please commit uncommitted changes")
 			exit()
 
-		source=get_trunk_branch(args)
-		current=get_cur_branch(args)
-
-
+		source = get_trunk_branch(args)
+		current = get_cur_branch(args)
 
 		print("Switching to master/main branch")
 		checkout_source = list()

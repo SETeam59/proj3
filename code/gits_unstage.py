@@ -4,6 +4,7 @@ import gits_logging
 from subprocess import PIPE
 import subprocess
 
+
 def unstage(args):
     """
     Function that moves files from staging area to the working directory.
@@ -16,11 +17,11 @@ def unstage(args):
         subprocess_command.append("reset")
         subprocess_command.append("HEAD")
         file_names = args.file_names
-        total_files=len(file_names)
+        total_files = len(file_names)
         if total_files != 0:
-            for i in range(0,total_files):
+            for i in range(0, total_files):
                 subprocess_command.append(file_names[i])
-            process = subprocess.Popen(subprocess_command,stdout=PIPE, stderr=PIPE)
+            process = subprocess.Popen(subprocess_command, stdout=PIPE, stderr=PIPE)
             stdout, stderr = process.communicate()
 
     except Exception as e:
