@@ -8,6 +8,7 @@
 ![GitHub](https://img.shields.io/badge/language-shell-orange.svg)
 [![DOI](https://zenodo.org/badge/302457130.svg)](https://zenodo.org/badge/latestdoi/302457130)
 [![DOI](https://zenodo.org/badge/706384125.svg)](https://zenodo.org/doi/10.5281/zenodo.10041778)
+[![codecov](https://codecov.io/gh/harshitpatel96/GITS/branch/master/graph/badge.svg?token=G6RG52G2YO)](https://codecov.io/gh/harshitpatel96/GITS/)
 
 
 ![GitHub issues](https://img.shields.io/github/issues/bhavesh242/GITS)
