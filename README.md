@@ -160,7 +160,10 @@ Example:
 
 ![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
 
+#### UI for the application
+Tkinter-based GUI application for executing GITS commands. It includes features such as auto-complete for GITS commands, a button to execute commands, a button to show command history, and a text widget to display the results. Notably, the application incorporates a command history feature, enabling users to review and select from a list of previously executed commands. The output of executed GITS commands is displayed in a text widget with a scrollbar, enhancing the overall usability of the application. The design employs various tkinter components, such as buttons, menus, and text widgets, creating a cohesive and interactive platform for seamless interaction with GITS commands. The code structure is modular, and comments are provided for clarity and readability.
 
+Snapshots :
 
 ### pydoc implementation
 We have tried to write as much documentation as possible. You can use pydoc to go through the documentation. 
