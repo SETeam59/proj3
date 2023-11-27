@@ -32,6 +32,7 @@ from gits_stats import get_stats
 from gits_commit_tree import gits_commit_tree
 from gits_tag import gits_tag_func
 from gits_describe import gits_describe
+from gits_squash import my_git_squash
 
 
 logger_status = init_gits_logger()
@@ -70,6 +71,16 @@ gits_commit_subparser.add_argument('--amend',
                                    action='store_true',
                                    help='amend commit message')
 gits_commit_subparser.set_defaults(func=gits_commit_func)
+
+gits_squash_subparser = subparsers.add_parser('squash')
+gits_squash_subparser.add_argument('-n',
+                                   required=True,
+                                   help='number of commits to squash')
+gits_squash_subparser.add_argument('-m',
+                                   required=True,
+                                   help='git squash commit message')
+
+gits_squash_subparser.set_defaults(func=my_git_squash)
 
 gits_create_subparser = subparsers.add_parser('create', help='Check out a new branch from local master')
 gits_create_subparser.add_argument('-b', help="branch name to create")
