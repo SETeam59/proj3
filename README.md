@@ -6,16 +6,17 @@
 [![Build Status](https://travis-ci.com/amolgautam25/GITS.svg?branch=master)](https://travis-ci.com/bhavesh242/GITS)
 ![GitHub](https://img.shields.io/badge/language-python-blue.svg)
 ![GitHub](https://img.shields.io/badge/language-shell-orange.svg)
-[![DOI](https://zenodo.org/badge/302457130.svg)](https://zenodo.org/badge/latestdoi/302457130)
-[![DOI](https://zenodo.org/badge/706384125.svg)](https://zenodo.org/doi/10.5281/zenodo.10041778)
-[![codecov](https://codecov.io/gh/SETeam59/proj3/graph/badge.svg?token=A529LPQCWY)](https://codecov.io/gh/SETeam59/proj3)
 
+[![codecov](https://codecov.io/gh/harshitpatel96/GITS/branch/master/graph/badge.svg?token=G6RG52G2YO)](https://codecov.io/gh/harshitpatel96/GITS/)
+[![FLAKE8](https://img.shields.io/badge/code%20style-flake8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+![GitHub issues](https://img.shields.io/github/issues/SETeam59/proj3)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/SETeam59/proj3?color=green)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/SETeam59/proj3/proj3)
+![GitHub repo size](https://img.shields.io/github/repo-size/SETeam59/proj3)
+![GitHub language count](https://img.shields.io/github/languages/count/SETeam59/proj3)
 
-![GitHub issues](https://img.shields.io/github/issues/bhavesh242/GITS)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/bhavesh242/GITS)
-
-![GitHub pull requests](https://img.shields.io/github/issues-pr/bhavesh242/GITS)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/bhavesh242/GITS)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/SETeam59/proj3)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/SETeam59/proj3)
 [![Alt text](http://i3.ytimg.com/vi/XWzKtZcDmKU/maxresdefault.jpg)](https://www.youtube.com/watch?v=XWzKtZcDmKU)
 
 ### Installation Guidelines:
