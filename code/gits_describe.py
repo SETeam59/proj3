@@ -1,5 +1,6 @@
 from subprocess import Popen, PIPE
 
+
 def gits_describe(args):
 	"""
 	The command finds the most recent tag that is reachable from a commit..
@@ -10,11 +11,11 @@ def gits_describe(args):
 		subprocess_command.append("describe")
 		subprocess_command.append("--all")
 		
-		process=Popen(subprocess_command, stdout=PIPE, stderr=PIPE)
-		stdout,stderr=process.communicate()
-		stdout=stdout.decode("utf-8")
+		process = Popen(subprocess_command, stdout=PIPE, stderr=PIPE)
+		stdout, stderr = process.communicate()
+		stdout = stdout.decode("utf-8")
 
-		final=stdout.split("\n")
+		final = stdout.split("\n")
 		final = list(filter(None, final)) 
 		for f in final:
 			print(f)

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-import gits_logging
 from subprocess import Popen, PIPE
+
 
 def gits_all_branch_func(args):
     """
@@ -26,5 +26,5 @@ def gits_all_branch_func(args):
         print("ERROR: gits branch command caught an exception")
         print("ERROR: {}".format(str(e)))
         return False
-    
+
     return True

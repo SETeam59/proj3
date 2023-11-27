@@ -68,9 +68,6 @@ def gits_commit_func_with_pytest(args):
             print(subprocess_command)
             process = Popen(subprocess_command, stdout=PIPE, stderr=PIPE)
             stdout, stderr = process.communicate()
-                
-                
-        
 
     except Exception as e:
         print("ERROR: gits commit command caught an exception")

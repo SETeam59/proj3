@@ -1,9 +1,10 @@
 import subprocess
-from subprocess import Popen, PIPE
+from subprocess import PIPE
 
 
 def default_alias(args):
     print("default alias")
+
 
 def add_alias(args):
     try:
@@ -17,6 +18,7 @@ def add_alias(args):
         print("ERROR: {}".format(str(e)))
         return False
 
+
 def remove_alias(args):
     try:
         cmd = ['git', 'config', '--global', '--unset', f'alias.{args.alias}']
@@ -28,6 +30,7 @@ def remove_alias(args):
         print("ERROR: gits alias command caught an exception")
         print("ERROR: {}".format(str(e)))
         return False
+
 
 def update_alias(args):
     try:
@@ -43,13 +46,14 @@ def update_alias(args):
         print("ERROR: {}".format(str(e)))
         return False
 
+
 def list_alias(args):
     try:
         if len(args.aliases) == 0:
             result = []
             try:
                 result = subprocess.check_output(['git', 'config', '--get-regexp', '^alias'], universal_newlines=True).strip()
-            except Exception as e:
+            except Exception:
                 pass
             if len(result) == 0:
                 print("No current aliases")

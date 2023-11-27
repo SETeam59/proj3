@@ -4,6 +4,7 @@ import os
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))
 SETTINGS_PATH = os.path.join(CURR_DIR, '..', 'configurations', 'nicknames.json')
 
+
 def read_nicknames_settings():
     try:
         with open(SETTINGS_PATH, 'r') as file:
@@ -12,6 +13,7 @@ def read_nicknames_settings():
         settings = {}
     
     return settings
+
 
 def write_nickname_settings(nicknames):
     with open(SETTINGS_PATH, 'w') as file:
@@ -26,13 +28,14 @@ def nickname_default(args):
     print()
     return True
 
+
 def add_nickname(args):
     nicknames = read_nicknames_settings()
     nicknames[args.n] = args.c
     write_nickname_settings(nicknames)
     print(f"Add nickname {args.n} for command {args.c}")
     return True
-   
+
 
 def remove_nickname(args):
     nicknames = read_nicknames_settings()
@@ -47,6 +50,7 @@ def remove_nickname(args):
 
     return True
 
+
 def update_nickname(args):
     nicknames = read_nicknames_settings()
     if args.o in nicknames:
@@ -57,7 +61,8 @@ def update_nickname(args):
     else:
         print(f"Nickname '{args.o}' not found.")
         return False
-    
+
+
 def list_nickname(args):
     nicknames = read_nicknames_settings()
     # Go through every nickname in the settings
