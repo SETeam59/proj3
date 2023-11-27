@@ -10,11 +10,12 @@ def parse_args(args):
     parser = argparse.ArgumentParser()
     return parser.parse_args(args)
 
-@patch("argparse.ArgumentParser.parse_args",return_value=argparse.Namespace())
+
+@patch("argparse.ArgumentParser.parse_args", return_value=argparse.Namespace())
 @patch("subprocess.Popen")
 def test_gits_status_happy(mock_var, mock_args):
     """
-    Git Status Success Case  
+    Git Status Success Case
     """
     mocked_obj = Mock()
     attrs = {'communicate.return_value': ('output'.encode('UTF-8'), 'error'), 'returncode': 0}

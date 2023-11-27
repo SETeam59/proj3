@@ -3,24 +3,24 @@ import subprocess
 from subprocess import Popen, PIPE
 
 def get_trunk_branch(args):
-    """
-    Function to return the trunk branch.
 	"""
-    try:
-        subprocess_command = list()
-        subprocess_command.append("git")
-        subprocess_command.append("branch")
-        subprocess_command.append("-r")
-        process = Popen(subprocess_command, stdout=PIPE, stderr=PIPE)
-        stdout, stderr = process.communicate()
-        stdout = stdout.decode("utf-8")
-        branches = list(filter(None, stdout.split("\n")))
-       	trunk=branches[0].split("/")[1]
-       	return trunk
+	Function to return the trunk branch.
+	"""
+	try:
+		subprocess_command = list()
+		subprocess_command.append("git")
+		subprocess_command.append("branch")
+		subprocess_command.append("-r")
+		process = Popen(subprocess_command, stdout=PIPE, stderr=PIPE)
+		stdout, stderr = process.communicate()
+		stdout = stdout.decode("utf-8")
+		branches = list(filter(None, stdout.split("\n")))
+		trunk=branches[0].split("/")[1]
+		return trunk
 
-    except Exception as e:
-        print("ERROR: gits branch command caught an exception")
-        print("ERROR: {}".format(str(e)))
+	except Exception as e:
+		print("ERROR: gits branch command caught an exception")
+		print("ERROR: {}".format(str(e)))
 
 def get_cur_branch(args):
 	"""
@@ -58,8 +58,8 @@ def gits_sync(args):
 		process = subprocess.Popen(untracked_stuff,stdout=PIPE, stderr=PIPE)
 		stdout, stderr = process.communicate()
 		if stdout != b'':
-		    print("Note: Please commit uncommitted changes")
-		    exit()
+			print("Note: Please commit uncommitted changes")
+			exit()
 
 		source=get_trunk_branch(args)
 		current=get_cur_branch(args)
@@ -102,9 +102,9 @@ def gits_sync(args):
 		print(stdout.decode('utf-8'))
 
 	except Exception as e:
-	    print("ERROR: gits sync command caught an exception")
-	    print("ERROR: {}".format(str(e)))
-	    return False
+		print("ERROR: gits sync command caught an exception")
+		print("ERROR: {}".format(str(e)))
+		return False
 	return True
 
 

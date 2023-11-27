@@ -130,8 +130,8 @@ gits_status_subparser.set_defaults(func=gits_status)
 gits_diff_subparser=subparsers.add_parser('diff', help='Shows difference commits, branches, files and more')
 gits_diff_subparser.set_defaults(func=gits_diff)
 
-# gits_sync_subparser=subparsers.add_parser('sync')
-# gits_sync_subparser.set_defaults(func=gits_sync)
+gits_sync_subparser=subparsers.add_parser('sync')
+gits_sync_subparser.set_defaults(func=gits_sync)
 
 gits_init_subparser = subparsers.add_parser('init', help='Initialize local git repository')
 gits_init_subparser.add_argument("--bare", action="store_true", help="Omit the working directory and initialize an empty git repository")

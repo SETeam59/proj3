@@ -32,7 +32,7 @@ def gits_tag_func(args):
 			print("gits tag executed successfully")
 				
 		elif command_num == 2:
-			tag_name = input ("Enter the tag name:")
+			tag_name = input("Enter the tag name:")
 			subprocess_command.append(tag_name)
 			process = Popen(subprocess_command, stdout=PIPE, stderr=PIPE)
 			stdout, stderr = process.communicate()
@@ -55,7 +55,7 @@ def gits_tag_func(args):
 			if stderr:
 				stderr  = stderr.decode("ascii")
 				final1 = stderr.split("\n")
-				final1 = list(filter(None, final1)) 
+				final1 = list(filter(None, final1))
 				for f in final1:
 					print(f)
 

@@ -1,5 +1,6 @@
 from subprocess import Popen, PIPE
 
+
 def checkout(args):
     """
     Function that checks out to the branch specified. Gives error and suggests to create the branch if not found. 
@@ -18,12 +19,11 @@ def checkout(args):
             checkout_feature.append(branch_name)
         process = Popen(checkout_feature, stdout=PIPE, stderr=PIPE)
         stdout, stderr = process.communicate()
-        print(stdout.decode('utf-8'))
-        
+        print(stdout.decode('utf-8'))      
         if stderr.decode('utf-8') == "error: pathspec '"+ branch_name +"' did not match any file(s) known to git\n":
             #print(stderr.decode('utf-8'))
             print(branch_name + " did not match any branches")
-            print("Please give a valid branch name or create a branch using gits create_branch")      
+            print("Please give a valid branch name or create a branch using gits create_branch")
         else:
             print(stderr.decode('utf-8'))
     except Exception as e:

@@ -13,6 +13,7 @@ GITS_COMMANDS = [
     "tag", "describe"
 ]
 
+
 # Function to execute GITS command
 def execute_gits_command(text):
     command = re.findall(r'[^"\s]+|"[^"]*"', text)

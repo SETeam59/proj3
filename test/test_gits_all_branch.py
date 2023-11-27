@@ -1,20 +1,19 @@
 import os
 import sys
-sys.path.insert(1, os.getcwd())
-
 import argparse
 import gits_all_branch
 from mock import patch, Mock
+sys.path.insert(1, os.getcwd())
 
 def parse_args(args):
     parser = argparse.ArgumentParser()
     return parser.parse_args(args)
 
-@patch("argparse.ArgumentParser.parse_args",return_value=argparse.Namespace())
+@patch("argparse.ArgumentParser.parse_args", return_value=argparse.Namespace())
 @patch("subprocess.Popen")
 def test_gits_all_branch_happy(mock_var, mock_args):
     """
-    Gits all-branch Success Case 
+    Gits all-branch Success Case
     """
     mocked_obj = Mock()
     attrs = {'communicate.return_value': ('output'.encode('UTF-8'), 'error'), 'returncode': 0}

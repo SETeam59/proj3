@@ -12,6 +12,7 @@ GITS_COMMANDS = [
     "tag", "describe"
 ]
 
+
 # Function to add a command to the command history file
 def add_to_command_history(command):
     history_file_path = 'command_history.txt'
@@ -87,6 +88,7 @@ def handle_autocomplete(event):
 
     # Show auto-complete suggestions
     show_autocomplete_suggestions(options)
+
 
 # Function to show auto-complete suggestions in a lighter-shaded window
 def show_autocomplete_suggestions(options):
@@ -283,11 +285,13 @@ scrollbar = ttk.Scrollbar(window, orient="vertical", command=result_text.yview)
 result_text.config(yscrollcommand=scrollbar.set)
 scrollbar.pack(side="right", fill="y")
 
+
 # Function to handle focus in and remove the placeholder text
 def handle_focus_in(event, placeholder_text):
     current_text = command_entry_var.get()
     if current_text == placeholder_text:
         command_entry_var.set("")
+
 
 # Run the GUI
 window.mainloop()

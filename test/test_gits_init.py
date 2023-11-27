@@ -15,6 +15,7 @@ def remove_file(file):
     except:
         os.remove(file)
 
+
 def delete_non_pys(path):
     files = os.listdir(path)
     for file in files:

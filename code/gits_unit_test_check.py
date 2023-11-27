@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 from subprocess import Popen, PIPE
-import sys
 
 def gits_unit_test_check(args):
     """
