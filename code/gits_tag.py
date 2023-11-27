@@ -53,7 +53,7 @@ def gits_tag_func(args):
 				print(f)
 			
 			if stderr:
-				stderr  = stderr.decode("ascii")
+				stderr = stderr.decode("ascii")
 				final1 = stderr.split("\n")
 				final1 = list(filter(None, final1))
 				for f in final1:
@@ -62,11 +62,9 @@ def gits_tag_func(args):
 			print("gits checkout ", tag_name, " executed successfully")
 			
 		else:
-			print("Invalid command")			
+			print("Invalid command")
 				
 	except Exception as e:
 		print("ERROR: gits tag command caught an exception")
 		print("ERROR: {}".format(str(e)))
-
-
 

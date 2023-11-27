@@ -21,7 +21,7 @@ def unstage(args):
             for i in range(0,total_files):
                 subprocess_command.append(file_names[i])
             process = subprocess.Popen(subprocess_command,stdout=PIPE, stderr=PIPE)
-            stdout,stderr = process.communicate()
+            stdout, stderr = process.communicate()
 
     except Exception as e:
         gits_logging.gits_logger.error("Unstage command caught an exception")

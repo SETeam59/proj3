@@ -6,10 +6,10 @@ import re
 
 # List of predefined GITS commands for auto-complete
 GITS_COMMANDS = [
-    "hello_world", "cmd_history", "set", "add", "commit", "create", "upstream", "profile", "sync",
-    "super-reset", "rebase", "reset", "push", "checkout", "unstage", "status", "diff",
-    "init", "all-branch", "remote-branch", "commit_with_test", "stats", "commit_tree",
-    "tag", "describe"
+    "hello_world", "cmd_history", "set", "add", "commit", "create", "upstream",
+    "profile", "sync", "super-reset", "rebase", "reset", "push", "checkout",
+    "unstage", "status", "diff", "init", "all-branch", "remote-branch",
+    "commit_with_test", "stats", "commit_tree", "tag", "describe"
 ]
 
 
@@ -20,6 +20,7 @@ def add_to_command_history(command):
     history.append(command)
     write_command_history(history, history_file_path)
     refresh_command_history_menu()
+
 
 # Add this function to refresh the command history menu
 def refresh_command_history_menu():
@@ -38,6 +39,7 @@ def refresh_command_history_menu():
     # Save the reference to the command history menu
     window.command_history_menu = command_history_menu
 
+
 # Function to get the command history
 def get_command_history():
     try:
@@ -46,7 +48,8 @@ def get_command_history():
         return history
     except FileNotFoundError:
         return []
-    
+
+
 # Function to write the command history to a file
 def write_command_history(history, file_path):
     try:
@@ -63,6 +66,7 @@ def autocomplete_filter(user_input):
 def handle_autocomplete(event):
     global command_entry
     current_text = command_entry_var.get()
+
 
     # Remove the placeholder text when the user starts typing
     if current_text == command_entry_placeholder:
@@ -123,6 +127,7 @@ def show_autocomplete_suggestions(options):
     window.suggestion_window = suggestion_window
     window.suggestion_listbox = suggestion_listbox
 
+
 # Function to insert selected auto-complete option into the entry
 def insert_autocomplete(event, suggestion_window):
     selected_option = event.widget.get(event.widget.curselection())
@@ -130,6 +135,7 @@ def insert_autocomplete(event, suggestion_window):
 
     # Destroy the suggestion window
     suggestion_window.destroy()
+
 
 # Function to move selection up in auto-complete suggestions
 def move_up(event, suggestion_listbox):
@@ -145,10 +151,10 @@ def move_down(event, suggestion_listbox):
         suggestion_listbox.selection_clear(current_index)
         suggestion_listbox.selection_set(current_index[0] + 1)
 
+
 # Function to execute GITS command
 def execute_gits_command():
     command = command_entry_var.get().strip()
-
     if not command:
         result_text.delete(1.0, tk.END)
         result_text.insert(tk.END, "Error: Empty command. Please enter a valid GITS command.")
@@ -171,6 +177,7 @@ def execute_gits_command():
         result_text.delete(1.0, tk.END)  # Clear previous output
         result_text.insert(tk.END, result)
 
+
         # Add the executed command to the history
         add_to_command_history(command_entry_var.get().strip())
 
@@ -184,7 +191,7 @@ def execute_gits_command():
 def show_command_history():
     # Unbind KeyRelease event temporarily
     command_entry.unbind("<KeyRelease>")
-    
+
     # Get the latest command history
     history = get_command_history()
 
@@ -223,11 +230,13 @@ def set_blurred_background(window, image_path, blur_radius):
     background_label.image = tk_blurred_image  # Save a reference to avoid garbage collection
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
+
 # Function to blur the image
 def blur_image(image_path, blur_radius):
     original_image = Image.open(image_path)
     blurred_image = original_image.filter(ImageFilter.GaussianBlur(blur_radius))
     return blurred_image
+
 
 # Create the main window
 window = tk.Tk()
