@@ -18,6 +18,24 @@ def add_to_command_history(command):
     history = get_command_history()
     history.append(command)
     write_command_history(history, history_file_path)
+    refresh_command_history_menu()
+
+# Add this function to refresh the command history menu
+def refresh_command_history_menu():
+    history = get_command_history()
+
+    # Destroy previous command history menu
+    if hasattr(window, "command_history_menu"):
+        window.command_history_menu.destroy()
+
+    # Create a new command history menu
+    command_history_menu = tk.Menu(command_history_button, tearoff=0)
+    for item in history:
+        command_history_menu.add_command(label=item, command=lambda value=item: command_entry_var.set(value))
+    command_history_button['menu'] = command_history_menu
+
+    # Save the reference to the command history menu
+    window.command_history_menu = command_history_menu
 
 # Function to get the command history
 def get_command_history():
@@ -161,11 +179,11 @@ def execute_gits_command():
         result_text.delete(1.0, tk.END)
         result_text.insert(tk.END, "An error occurred: " + str(e))
 
-# Function to show command history in a pop-up window
 def show_command_history():
     # Unbind KeyRelease event temporarily
     command_entry.unbind("<KeyRelease>")
     
+    # Get the latest command history
     history = get_command_history()
 
     # Destroy previous command history menu
@@ -188,7 +206,6 @@ def show_command_history():
 
     # Rebind KeyRelease event
     command_entry.bind("<KeyRelease>", handle_autocomplete)
-
 
 # Function to set blurred background image
 def set_blurred_background(window, image_path, blur_radius):
