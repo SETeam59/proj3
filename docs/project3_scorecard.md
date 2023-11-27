@@ -9,14 +9,14 @@
 | DOI badge: exists | 3 | in README.md (TODO) |
 | Docs: doco generated, format not ugly | 3 | in README |
 | Docs: what: point descriptions of each class/function (in isolation) | 3 | in README |
-| Docs: how: for common use cases X, Y, Z mini-tutorials showing worked examples on how to do X, Y, Z | 3 | in README (TODO) |
-| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing | 3 | in README and Advertisement (TODO) |
+| Docs: how: for common use cases X, Y, Z mini-tutorials showing worked examples on how to do X, Y, Z | 3 | in README |
+| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing | 3 | in README and Advertisement |
 | Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. | 3 | in README |
 | Use of version control tools | 3 | Used GitHub for VC |
-| Use of style checkers | 3 | Used Flake8 (TODO - Make sure it is up to standard) |
-| Use of code formatters | 3 | Used Flake8 |
-| Use of syntax checkers | 3 | Used Flake8 |
-| Use of code coverage | 3 | travis.yml runs code coverage |
+| Use of style checkers | 3 | Used black - TODO |
+| Use of code formatters | 3 | Used black |
+| Use of syntax checkers | 3 | Used black |
+| Use of code coverage | 3 | travis.yml runs code coverage - TODO |
 | Other automated analysis tools | 3 | pytest for test cases, command line allows for test to run automatically |
 | Test cases exist | 3 | "test" directory exists with unit tests |
 | Test cases are routinely executed | 3 | tests run before commiting code with the commit_with_test command |
@@ -96,8 +96,8 @@
 | Is your software released under an open source license? | Y | - |
 | Is your software released under an OSI-approved open-source license? | Y | - |
 | Does each of your source code files include a license header? | Y | - |
-| Do you have a recommended citation for your software? | N | - |
-| Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)? | Y | TODO |
+| Do you have a recommended citation for your software? | Y | citation.md |
+| Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)? | Y | in plan.md |
 | Does your website or documentation describe how your project is funded, and the period over which funding is guaranteed? | N | - |
 | Do you make timely announcements of the deprecation of components, APIs, etc.? | N | - |
 

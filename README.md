@@ -1,6 +1,5 @@
 
 # GITS 
-### GIT Simplified
 
 ![GitHub](https://img.shields.io/github/license/amolgautam25/GITS)
 [![Build Status](https://travis-ci.com/amolgautam25/GITS.svg?branch=master)](https://travis-ci.com/bhavesh242/GITS)
@@ -18,6 +17,8 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/SETeam59/proj3)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/SETeam59/proj3)
 [![Alt text](http://i3.ytimg.com/vi/XWzKtZcDmKU/maxresdefault.jpg)](https://www.youtube.com/watch?v=XWzKtZcDmKU)
+### GITS: GIT Simplified
+Have difficulty continually looking up abstract git commands? Welcome to GITS! This project aims to reduce the overhead that is encountered when using git by simplifying certain actions and combining others into a single step. Listed below is all of the offered functionality
 
 ### Installation Guidelines:
 1. Clone the GITS repository <br/>
@@ -124,6 +125,21 @@ Example:
 
 ![image](https://github.com/ajithkvp/GITS/assets/69590799/527a7547-0d41-4c4f-9f6c-125f653a5927)
 
+#### gits nickname [add, remove, update, list]
+The gits nickname command is used to work with gits commands by calling them something alternative to what is set by default. This allows for increased personalization since the user can customize the way in which they work with this tool and their repos. Users can add nicknames, remove nicknames, update existing nicknames, and list existing nicknames in the command line. 
+
+Example:
+
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20nickname.png)
+
+#### gits alias [add, remove, update, list]
+The gits alias command is used to work with the git alias functionality more easily. Similar to the nickname command, this increases the avility for personalization and the way they work with repos. Also, users can add, remove, update, and list nicknames.
+
+Example:
+
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
+
+
 ### pydoc implementation
 We have tried to write as much documentation as possible. You can use pydoc to go through the documentation. 
 For example if you want to go through all the documentation for all files in code/ directory, do the following: 
@@ -136,24 +152,21 @@ This will open up a browser and you can see all the files. You can click on a pa
 Note: More functionality are being added to this project. Please refer to the 'issues' tab for more information. In case you want to contribute to this project , please refer to 'Contributing.md' file.
 
 ## Style Checker and Analyzer
-We are using flake9 as our style checker and code analyzer. While contrivuting to this project, make sure you conform to norms dictated by flake8
-### Flake8 
+We are using black as our style checkers and code analyzer. While contrivuting to this project, make sure you conform to norms dictated by black
+
+### black
 <b>Installation</b>
-- `python<version> -m pip install flake8`
+- `python<version> -m pip install black`
 
-If you want Flake8 to be installed for your default Python installation, you can instead use:
-- `python -m pip install flake8`
-
- <b>Using Flake8</b> 
- <br/>To start using Flake8, open an interactive shell and run one of the following,
-- `flake8 path/to/code/to/check.py`
-- `flake8 path/to/code/`
+ <b>Using black</b> 
+ <br/>To start using black, open an interactive shell and run the following. This will automatically refractor the code according the black guidelines
+- `black path/to/code/to/check.py`
 
 This repository is made for CSC 510 Software Engineering Course at NC State University.
 
-Project Group 56 Team Members: 
+Project Group 59 Team Members: 
 
-* Ajith Kumar V P
-* Priya Krishnamurthy
-* Divya Puranam
-* Reshma Rajashekaraiah
+* Saketh Ruddarraju
+* Sharan Jamanani
+* Nayan Bhushan
+* Hruthwik Krishnamurthy
