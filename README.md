@@ -128,14 +128,14 @@ The gits nickname command is used to work with gits commands by calling them som
 
 Example:
 
-![image]()
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20nickname.png)
 
 #### gits alias [add, remove, update, list]
 The gits alias command is used to work with the git alias functionality more easily. Similar to the nickname command, this increases the avility for personalization and the way they work with repos. Also, users can add, remove, update, and list nicknames.
 
 Example:
 
-![image]()
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
 
 
 ### pydoc implementation
