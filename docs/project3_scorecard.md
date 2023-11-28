@@ -96,8 +96,8 @@
 | Is your software released under an open source license? | Y | - |
 | Is your software released under an OSI-approved open-source license? | Y | - |
 | Does each of your source code files include a license header? | Y | - |
-| Do you have a recommended citation for your software? | N | - |
-| Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)? | Y | TODO |
+| Do you have a recommended citation for your software? | Y | citation.md |
+| Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)? | Y | in plan.md |
 | Does your website or documentation describe how your project is funded, and the period over which funding is guaranteed? | N | - |
 | Do you make timely announcements of the deprecation of components, APIs, etc.? | N | - |
 
