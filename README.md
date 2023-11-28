@@ -17,6 +17,10 @@
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/SETeam59/proj3)
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/SETeam59/proj3)
 [![Alt text](http://i3.ytimg.com/vi/XWzKtZcDmKU/maxresdefault.jpg)](https://www.youtube.com/watch?v=XWzKtZcDmKU)
+[![Alt text](https://github.com/SETeam59/proj3/blob/proj3/gits-logo.png)](https://youtu.be/2VEsbaLNzVs?si=qpF6nh1Uop-OelVu)
+# Scorecard
+You can view the scorecard on [GitHub](https://github.com/SETeam59/proj3/tree/proj3/proj3).
+
 ### GITS: GIT Simplified
 Have difficulty continually looking up abstract git commands? Welcome to GITS! This project aims to reduce the overhead that is encountered when using git by simplifying certain actions and combining others into a single step. Listed below is all of the offered functionality
 
@@ -144,7 +148,7 @@ The Python script includes a function, gits_cmd_history_func, that displays the 
 
 Example:
 
-![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits_cmd_history.png)
 
 #### gits squash
 The my_git_squash function uses subprocess to execute a Git squash operation. It resets the last specified number of commits, stages changes, and commits the squashed changes with the provided message. The function prints the process outputs and notifies when the squash is completed, checking the new git log. In case of any exceptions during the operation, it handles errors and returns False.
@@ -158,7 +162,7 @@ The gits_visualizer function utilizes subprocess to gather information about the
 
 Example:
 
-![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits_visualize.gif)
 
 #### UI for the application
 Tkinter-based GUI application for executing GITS commands. It includes features such as auto-complete for GITS commands, a button to execute commands, a button to show command history, and a text widget to display the results. Notably, the application incorporates a command history feature, enabling users to review and select from a list of previously executed commands. The output of executed GITS commands is displayed in a text widget with a scrollbar, enhancing the overall usability of the application. The design employs various tkinter components, such as buttons, menus, and text widgets, creating a cohesive and interactive platform for seamless interaction with GITS commands. The code structure is modular, and comments are provided for clarity and readability.
