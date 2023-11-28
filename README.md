@@ -1,6 +1,5 @@
 
 # GITS 
-### GIT Simplified
 
 ![GitHub](https://img.shields.io/github/license/amolgautam25/GITS)
 [![Build Status](https://travis-ci.com/amolgautam25/GITS.svg?branch=master)](https://travis-ci.com/bhavesh242/GITS)
@@ -17,6 +16,8 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/bhavesh242/GITS)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/bhavesh242/GITS)
 [![Alt text](http://i3.ytimg.com/vi/XWzKtZcDmKU/maxresdefault.jpg)](https://www.youtube.com/watch?v=XWzKtZcDmKU)
+### GITS: GIT Simplified
+Have difficulty continually looking up abstract git commands? Welcome to GITS! This project aims to reduce the overhead that is encountered when using git by simplifying certain actions and combining others into a single step. Listed below is all of the offered functionality
 
 ### Installation Guidelines:
 1. Clone the GITS repository <br/>
