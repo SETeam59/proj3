@@ -1,12 +1,13 @@
 
 # GITS 
 
-![GitHub](https://img.shields.io/github/license/amolgautam25/GITS)
+![GitHub License](https://img.shields.io/github/license/SETeam59/proj3)
 [![Build Status](https://travis-ci.com/amolgautam25/GITS.svg?branch=master)](https://travis-ci.com/bhavesh242/GITS)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10212062.svg)](https://doi.org/10.5281/zenodo.10212062)
 ![GitHub](https://img.shields.io/badge/language-python-blue.svg)
 ![GitHub](https://img.shields.io/badge/language-shell-orange.svg)
 [![codecov](https://codecov.io/gh/harshitpatel96/GITS/branch/master/graph/badge.svg?token=G6RG52G2YO)](https://codecov.io/gh/harshitpatel96/GITS/)
-[![FLAKE8](https://img.shields.io/badge/code%20style-flake8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![BLACK](https://img.shields.io/badge/code%20style-black-black.svg)](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html)
 ![GitHub issues](https://img.shields.io/github/issues/SETeam59/proj3)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/SETeam59/proj3?color=green)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/SETeam59/proj3/proj3)
@@ -166,5 +167,5 @@ Project Group 59 Team Members:
 
 * Saketh Ruddarraju
 * Sharan Jamanani
-* Nayan Bhushan
+* Nayan Bhushan Kanganahalli Nagabhushana
 * Hruthwik Krishnamurthy
