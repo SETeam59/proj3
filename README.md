@@ -135,24 +135,21 @@ This will open up a browser and you can see all the files. You can click on a pa
 Note: More functionality are being added to this project. Please refer to the 'issues' tab for more information. In case you want to contribute to this project , please refer to 'Contributing.md' file.
 
 ## Style Checker and Analyzer
-We are using flake9 as our style checker and code analyzer. While contrivuting to this project, make sure you conform to norms dictated by flake8
-### Flake8 
+We are using black as our style checkers and code analyzer. While contrivuting to this project, make sure you conform to norms dictated by black
+
+### black
 <b>Installation</b>
-- `python<version> -m pip install flake8`
+- `python<version> -m pip install black`
 
-If you want Flake8 to be installed for your default Python installation, you can instead use:
-- `python -m pip install flake8`
-
- <b>Using Flake8</b> 
- <br/>To start using Flake8, open an interactive shell and run one of the following,
-- `flake8 path/to/code/to/check.py`
-- `flake8 path/to/code/`
+ <b>Using black</b> 
+ <br/>To start using black, open an interactive shell and run the following. This will automatically refractor the code according the 
+- `black path/to/code/to/check.py`
 
 This repository is made for CSC 510 Software Engineering Course at NC State University.
 
-Project Group 56 Team Members: 
+Project Group 59 Team Members: 
 
-* Ajith Kumar V P
-* Priya Krishnamurthy
-* Divya Puranam
-* Reshma Rajashekaraiah
+* Saketh Ruddarraju
+* Sharan Jamanani
+* Nayan Bhushan
+* Hruthwik Krishnamurthy
