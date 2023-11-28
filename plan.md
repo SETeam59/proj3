@@ -64,3 +64,22 @@ The above implemented functionalities are supported only on Linux/Mac operating 
 2. Clear and complete documentation
 3. Implementation of new functionalities.
 4. Provide examples and visualization
+
+## Phase 4
+### Tasks and Implementation:
+1. Write new features which will benefit users further
+2. Improve the quantity and quality of tests
+3. Continue to work on documentation for clients of the repo
+4. Implement a UI for better user experience
+5. Provide example of outputs
+6. Deliver a good repository.
+
+### Functionalities:
+    - UI
+    - gits nickname
+    - gits alias
+    - ...
+   
+### Future Scope:
+1. Improve the UI for better user experience
+2. Implement a feature in which user alias and settings can be imported and exported across different machines.
