@@ -89,5 +89,5 @@ We are using black as our style checkers and code analyzer. While contrivuting t
 - `python<version> -m pip install black`
 
  <b>Using black</b> 
- <br/>To start using black, open an interactive shell and run the following. This will automatically refractor the code according the 
+ <br/>To start using black, open an interactive shell and run the following. This will automatically refractor the code according the black guidelines
 - `black path/to/code/to/check.py`
