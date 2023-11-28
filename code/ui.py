@@ -33,7 +33,8 @@ def refresh_command_history_menu():
     # Create a new command history menu
     command_history_menu = tk.Menu(command_history_button, tearoff=0)
     for item in history:
-        command_history_menu.add_command(label=item, command=lambda value=item: command_entry_var.set(value))
+        command_history_menu.add_command(
+            label=item, command=lambda value=item: command_entry_var.set(value))
     command_history_button['menu'] = command_history_menu
 
     # Save the reference to the command history menu
@@ -59,14 +60,17 @@ def write_command_history(history, file_path):
         print(f"Error writing command history to file: {str(e)}")
 
 # Function to filter auto-complete options based on user input
+
+
 def autocomplete_filter(user_input):
     return [command for command in GITS_COMMANDS if command.startswith(user_input)]
 
 # Function to handle auto-complete when a key is pressed
+
+
 def handle_autocomplete(event):
     global command_entry
     current_text = command_entry_var.get()
-
 
     # Remove the placeholder text when the user starts typing
     if current_text == command_entry_placeholder:
@@ -76,7 +80,8 @@ def handle_autocomplete(event):
     current_cursor_position = command_entry.index(tk.INSERT)
 
     # Get the word to be completed
-    word_to_complete = re.search(r'\S*$', current_text[:current_cursor_position]).group(0)
+    word_to_complete = re.search(
+        r'\S*$', current_text[:current_cursor_position]).group(0)
 
     # Get the options to display in auto-complete
     options = autocomplete_filter(word_to_complete)
@@ -84,7 +89,8 @@ def handle_autocomplete(event):
     # If the suggestion window is open, handle the Tab and Enter keys
     if hasattr(window, "suggestion_window") and window.suggestion_window.winfo_exists():
         if event.keysym == "Tab" or event.keysym == "Return":
-            selected_option = window.suggestion_window.suggestion_listbox.get(tk.ACTIVE)
+            selected_option = window.suggestion_window.suggestion_listbox.get(
+                tk.ACTIVE)
             if selected_option:
                 command_entry_var.set(selected_option)
                 window.suggestion_window.destroy()
@@ -117,11 +123,16 @@ def show_autocomplete_suggestions(options):
         suggestion_listbox.insert(tk.END, option)
 
     # Bind events for navigation and completion
-    suggestion_listbox.bind("<ButtonRelease-1>", lambda event: insert_autocomplete(event, suggestion_window))
-    suggestion_listbox.bind("<Return>", lambda event: insert_autocomplete(event, suggestion_window))
-    suggestion_listbox.bind("<Tab>", lambda event: insert_autocomplete(event, suggestion_window))
-    suggestion_listbox.bind("<Up>", lambda event: move_up(event, suggestion_listbox))
-    suggestion_listbox.bind("<Down>", lambda event: move_down(event, suggestion_listbox))
+    suggestion_listbox.bind(
+        "<ButtonRelease-1>", lambda event: insert_autocomplete(event, suggestion_window))
+    suggestion_listbox.bind(
+        "<Return>", lambda event: insert_autocomplete(event, suggestion_window))
+    suggestion_listbox.bind(
+        "<Tab>", lambda event: insert_autocomplete(event, suggestion_window))
+    suggestion_listbox.bind(
+        "<Up>", lambda event: move_up(event, suggestion_listbox))
+    suggestion_listbox.bind(
+        "<Down>", lambda event: move_down(event, suggestion_listbox))
 
     # Save the reference to the suggestion window and listbox
     window.suggestion_window = suggestion_window
@@ -145,6 +156,8 @@ def move_up(event, suggestion_listbox):
         suggestion_listbox.selection_set(current_index[0] - 1)
 
 # Function to move selection down in auto-complete suggestions
+
+
 def move_down(event, suggestion_listbox):
     current_index = suggestion_listbox.curselection()
     if current_index and current_index[0] < len(suggestion_listbox.get(0, tk.END)) - 1:
@@ -157,12 +170,14 @@ def execute_gits_command():
     command = command_entry_var.get().strip()
     if not command:
         result_text.delete(1.0, tk.END)
-        result_text.insert(tk.END, "Error: Empty command. Please enter a valid GITS command.")
+        result_text.insert(
+            tk.END, "Error: Empty command. Please enter a valid GITS command.")
         return
 
     if command not in GITS_COMMANDS:
         result_text.delete(1.0, tk.END)
-        result_text.insert(tk.END, f"Error: Unknown command '{command}'. Please enter a valid GITS command.")
+        result_text.insert(
+            tk.END, f"Error: Unknown command '{command}'. Please enter a valid GITS command.")
         return
 
     command = re.findall(r'[^"\s]+|"[^"]*"', command)
@@ -173,10 +188,10 @@ def execute_gits_command():
 
     try:
         # Execute the GITS command and capture the output
-        result = subprocess.check_output(command_list, stderr=subprocess.STDOUT, text=True)
+        result = subprocess.check_output(
+            command_list, stderr=subprocess.STDOUT, text=True)
         result_text.delete(1.0, tk.END)  # Clear previous output
         result_text.insert(tk.END, result)
-
 
         # Add the executed command to the history
         add_to_command_history(command_entry_var.get().strip())
@@ -187,6 +202,7 @@ def execute_gits_command():
     except Exception as e:
         result_text.delete(1.0, tk.END)
         result_text.insert(tk.END, "An error occurred: " + str(e))
+
 
 def show_command_history():
     # Unbind KeyRelease event temporarily
@@ -202,11 +218,13 @@ def show_command_history():
     # Create a new command history menu
     command_history_menu = tk.Menu(command_history_button, tearoff=0)
     for item in history:
-        command_history_menu.add_command(label=item, command=lambda value=item: command_entry_var.set(value))
+        command_history_menu.add_command(
+            label=item, command=lambda value=item: command_entry_var.set(value))
     command_history_button['menu'] = command_history_menu
 
     if history:
-        selected_item = simpledialog.askstring("Command History", "Select a command:", parent=window, menu=history)
+        selected_item = simpledialog.askstring(
+            "Command History", "Select a command:", parent=window, menu=history)
         if selected_item:
             command_entry_var.set(selected_item)
 
@@ -217,24 +235,29 @@ def show_command_history():
     command_entry.bind("<KeyRelease>", handle_autocomplete)
 
 # Function to set blurred background image
+
+
 def set_blurred_background(window, image_path, blur_radius):
     # Blur the image
     original_image = Image.open(image_path)
-    blurred_image = original_image.filter(ImageFilter.GaussianBlur(blur_radius))
+    blurred_image = original_image.filter(
+        ImageFilter.GaussianBlur(blur_radius))
 
     # Convert the PIL Image to a Tkinter PhotoImage
     tk_blurred_image = ImageTk.PhotoImage(blurred_image)
 
     # Create a label with the blurred image as the background
     background_label = tk.Label(window, image=tk_blurred_image)
-    background_label.image = tk_blurred_image  # Save a reference to avoid garbage collection
+    # Save a reference to avoid garbage collection
+    background_label.image = tk_blurred_image
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 
 # Function to blur the image
 def blur_image(image_path, blur_radius):
     original_image = Image.open(image_path)
-    blurred_image = original_image.filter(ImageFilter.GaussianBlur(blur_radius))
+    blurred_image = original_image.filter(
+        ImageFilter.GaussianBlur(blur_radius))
     return blurred_image
 
 
@@ -243,7 +266,7 @@ window = tk.Tk()
 window.title("GITS GUI")
 
 # Set the image path and blur radius
-image_path = "BG.png"
+image_path = "../BG.png"
 blur_radius = 5
 
 # Set blurred background
@@ -254,14 +277,15 @@ style = ttk.Style()
 style.theme_use('clam')
 
 # Load a GITS logo (replace 'gits_logo.png' with your actual logo file)
-logo_image = tk.PhotoImage(file='gits-logo.png').subsample(2, 2)
+logo_image = tk.PhotoImage(file='../gits-logo.png').subsample(2, 2)
 logo_label = tk.Label(window, image=logo_image)
 logo_label.pack(pady=10)
 
 # Create an entry for GITS commands with auto-complete
 command_entry_var = tk.StringVar()
 command_entry_placeholder = "Type your command here..."  # Placeholder text
-command_entry = ttk.Entry(window, font=("Arial", 12), textvariable=command_entry_var, justify="left")
+command_entry = ttk.Entry(window, font=("Arial", 12),
+                          textvariable=command_entry_var, justify="left")
 command_entry.pack(pady=10, padx=10, fill=tk.BOTH, expand=True)
 # Insert the placeholder text
 command_entry.insert(0, command_entry_placeholder)
@@ -271,22 +295,27 @@ command_entry.configure(background="#F0F0F0")
 
 # Bind events for auto-complete and placeholder handling
 command_entry.bind("<KeyRelease>", handle_autocomplete)
-command_entry.bind("<FocusIn>", lambda event: handle_focus_in(event, command_entry_placeholder))
+command_entry.bind("<FocusIn>", lambda event: handle_focus_in(
+    event, command_entry_placeholder))
 
 # Create a button to execute commands with a nice style
-execute_button = tk.Button(window, text="Execute GITS Command", command=execute_gits_command, font=("Arial", 14), padx=10, pady=10)
+execute_button = tk.Button(window, text="Execute GITS Command",
+                           command=execute_gits_command, font=("Arial", 14), padx=10, pady=10)
 execute_button.pack(pady=10)
 
 # Create a button to show command history
-command_history_button = tk.Menubutton(window, text="Command History", font=("Arial", 12))
+command_history_button = tk.Menubutton(
+    window, text="Command History", font=("Arial", 12))
 command_history_button.pack(pady=5, padx=10, fill=tk.BOTH, expand=True)
 command_history_menu = tk.Menu(command_history_button, tearoff=0)
 for item in get_command_history():
-    command_history_menu.add_command(label=item, command=lambda value=item: command_entry_var.set(value))
+    command_history_menu.add_command(
+        label=item, command=lambda value=item: command_entry_var.set(value))
 command_history_button['menu'] = command_history_menu
 
 # Create a text widget to display the results with a border
-result_text = tk.Text(window, height=10, width=60, font=("Arial", 12), relief="solid", borderwidth=2)
+result_text = tk.Text(window, height=10, width=60, font=(
+    "Arial", 12), relief="solid", borderwidth=2)
 result_text.pack(padx=10, fill=tk.BOTH, expand=True)
 
 # Configure a scrollbar for the text widget
