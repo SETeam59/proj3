@@ -81,17 +81,13 @@ Describe the existing behavior and elucidate why the suggested enhancement is pr
 ### Utility to Users:
 Explain how this enhancement would benefit the majority of users and clarify why it's not suited for implementation as a community package.
 
-### Flake8 
-<b>Installation</b>
-- `python<version> -m pip install flake8`
-
-If you want Flake8 to be installed for your default Python installation, you can instead use:
-- `python -m pip install flake8`
-
- <b>Using Flake8</b> 
- <br/>To start using Flake8, open an interactive shell and run one of the following,
-- `flake8 path/to/code/to/check.py`
-- `flake8 path/to/code/`
-
 ## Style Checker and Analyzer
-We are using flake9 as our style checker and code analyzer. While contrivuting to this project, make sure you conform to norms dictated by flake8
+We are using black as our style checkers and code analyzer. While contrivuting to this project, make sure you conform to norms dictated by black
+
+### black
+<b>Installation</b>
+- `python<version> -m pip install black`
+
+ <b>Using black</b> 
+ <br/>To start using black, open an interactive shell and run the following. This will automatically refractor the code according the 
+- `black path/to/code/to/check.py`
