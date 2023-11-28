@@ -6,29 +6,29 @@
 | Number of commits: by different people | 3 | Note that Saketh commited code under a different account "svruddar" [GitHub Commits](https://github.com/SETeam59/proj3/graphs/contributors) |
 | Issues reports: there are many | 3 | All code changes had relevant issues they were linked to: [GitHub Issues](https://github.com/SETeam59/proj3/issues) |
 | Issues are being closed | 3 | Issues are closed after code-related branches were closed |
-| DOI badge: exists | 3 | in README.md (TODO) |
+| DOI badge: exists | 3 | in README.md |
 | Docs: doco generated, format not ugly | 3 | in README |
 | Docs: what: point descriptions of each class/function (in isolation) | 3 | in README |
 | Docs: how: for common use cases X, Y, Z mini-tutorials showing worked examples on how to do X, Y, Z | 3 | in README |
 | Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing | 3 | in README and Advertisement |
 | Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. | 3 | in README |
 | Use of version control tools | 3 | Used GitHub for VC |
-| Use of style checkers | 3 | Used black - TODO |
+| Use of style checkers | 3 | Used black |
 | Use of code formatters | 3 | Used black |
 | Use of syntax checkers | 3 | Used black |
-| Use of code coverage | 3 | travis.yml runs code coverage - TODO |
+| Use of code coverage | 3 | in README |
 | Other automated analysis tools | 3 | pytest for test cases, command line allows for test to run automatically |
 | Test cases exist | 3 | "test" directory exists with unit tests |
 | Test cases are routinely executed | 3 | tests run before commiting code with the commit_with_test command |
 | The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up | 3 | [Contributing.md](https://github.com/SETeam59/proj3/blob/master/CONTRIBUTING.md) |
 | Issues are discussed before they are closed | 3 | Relevant discussion is included in Issues |
 | Chat channel: exists | 3 | [WhatsApp Group](https://github.com/SETeam59/proj3/blob/master/docs/Team%2059%20WhatsApp%20Group.png) |
-| Test cases: a large proportion of the issues related to handling failing cases |  | TODO |
+| Test cases: a large proportion of the issues related to handling failing cases | 3 | |
 | Evidence that the whole team is using the same tools: everyone can get to all tools and files | 3 | All development tools used are free, and the dependency list is available to everyone on GH |
 | Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people) | 3 | Installation steps and requirements.txt file ensure that everyone is using the same tools for development |
 | Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share the screen, they demonstrate the system running on their computer) | 3 | All tools needed for development are listed in the README under the installation section |
 | Evidence that the members of the team are working across multiple places in the code base | 3 | All group members worked on multiple features of the application, see commit history |
-| Short release cycles | 3 | TODO |
+| Short release cycles | 3 |  |
 | Online sustainability evaluation |  |  |
 | Does your website and documentation provide a clear, high-level overview of your software? | Y | in README |
 | Does your website and documentation clearly describe the type of user who should use your software? | Y | People who want to use a more simplified version of git for certain actions |
@@ -44,7 +44,7 @@
 | If you provide more extensive documentation, does this provide clear, step-by-step instructions on how to deploy and use your software? | Y | README has usage and installation steps |
 | Do you provide a comprehensive guide to all your software’s commands, functions, and options? | Y |  |
 | Do you provide troubleshooting information that describes the symptoms and step-by-step solutions for problems and error messages? | Y | Common issues are addressed in README such as running into an error with the "sync" command |
-| If your software can be used as a library, package, or service by other software, do you provide comprehensive API documentation? | Y | Doc that describes all functionality (TODO) |
+| If your software can be used as a library, package, or service by other software, do you provide comprehensive API documentation? | Y | Doc that describes all functionality |
 | Do you store your documentation under revision control with your source code? | Y |  |
 | Do you publish your release history e.g. release data, version numbers, key features of each release, etc. on your website or in your documentation? | Y |  |
 | Does your software describe how a user can get help with using your software? | Y |  |
@@ -62,7 +62,7 @@
 | Does your documentation adhere to appropriate accessibility conventions or standards? | Y |  |
 | Is your source code stored in a repository under revision control? | Y |  |
 | Is each source code release a snapshot of the repository? | Y |  |
-| Are releases tagged in the repository? | Y | TODO |
+| Are releases tagged in the repository? | Y |  |
 | Is there a branch of the repository that is always stable? (i.e. tests always pass, code always builds successfully) | Y |  |
 | Do you back-up your repository? | Y |  |
 | Do you provide publicly-available instructions for building your software from the source code? | Y |  |
