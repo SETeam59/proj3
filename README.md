@@ -123,6 +123,21 @@ Example:
 
 ![image](https://github.com/ajithkvp/GITS/assets/69590799/527a7547-0d41-4c4f-9f6c-125f653a5927)
 
+#### gits nickname [add, remove, update, list]
+The gits nickname command is used to work with gits commands by calling them something alternative to what is set by default. This allows for increased personalization since the user can customize the way in which they work with this tool and their repos. Users can add nicknames, remove nicknames, update existing nicknames, and list existing nicknames in the command line. 
+
+Example:
+
+![image]()
+
+#### gits alias [add, remove, update, list]
+The gits alias command is used to work with the git alias functionality more easily. Similar to the nickname command, this increases the avility for personalization and the way they work with repos. Also, users can add, remove, update, and list nicknames.
+
+Example:
+
+![image]()
+
+
 ### pydoc implementation
 We have tried to write as much documentation as possible. You can use pydoc to go through the documentation. 
 For example if you want to go through all the documentation for all files in code/ directory, do the following: 
