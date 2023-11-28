@@ -26,7 +26,7 @@ Project maintainers have the authority and responsibility to remove, edit, or re
 This Code of Conduct is applicable both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representing a project or community include using an official project email address, posting via an official social media account, or serving as an appointed representative at an online or offline event. The representation of a project may be further defined and clarified by project maintainers.
 
 ## Enforcement
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at avinaya@ncsu.edu/ pkrish24@ncsu.edu/ dtpurana@ncsu.edu/ rrajash@ncsu.edu. All complaints will be reviewed and investigated, and appropriate and necessary actions will be taken based on the circumstances. The project team is bound to maintain confidentiality regarding the reporter of an incident. Specific enforcement policies may be detailed in separate documents.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at svruddar@ncsu.edu/ or Hruthwikk1999@gmail.com/. All complaints will be reviewed and investigated, and appropriate and necessary actions will be taken based on the circumstances. The project team is bound to maintain confidentiality regarding the reporter of an incident. Specific enforcement policies may be detailed in separate documents.
 
 Project maintainers who fail to adhere to or enforce the Code of Conduct in good faith may face temporary or permanent consequences, as determined by other members of the project's leadership.
 
