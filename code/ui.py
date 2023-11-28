@@ -138,6 +138,20 @@ def show_autocomplete_suggestions(options):
     window.suggestion_window = suggestion_window
     window.suggestion_listbox = suggestion_listbox
 
+# Function to destroy auto-complete window and remove focus from text entry
+
+
+def destroy_autocomplete_window(event):
+    if hasattr(window, "suggestion_window") and window.suggestion_window.winfo_exists():
+        window.suggestion_window.destroy()
+
+    # Remove focus from the text entry widget
+    command_entry.focus_set()
+
+
+def is_click_outside_textbox(event):
+    return event.widget != command_entry
+
 
 # Function to insert selected auto-complete option into the entry
 def insert_autocomplete(event, suggestion_window):
@@ -296,6 +310,9 @@ command_entry.configure(background="#F0F0F0")
 
 # Bind events for auto-complete and placeholder handling
 command_entry.bind("<KeyRelease>", handle_autocomplete)
+# Bind events to the text entry for auto-complete and window destruction
+window.bind("<ButtonRelease-1>", lambda event: is_click_outside_textbox(event)
+            and destroy_autocomplete_window(event))
 command_entry.bind("<FocusIn>", lambda event: handle_focus_in(
     event, command_entry_placeholder))
 
