@@ -6,7 +6,7 @@
 | Number of commits: by different people | 3 | Note that Saketh commited code under a different account "svruddar" [GitHub Commits](https://github.com/SETeam59/proj3/graphs/contributors) |
 | Issues reports: there are many | 3 | All code changes had relevant issues they were linked to: [GitHub Issues](https://github.com/SETeam59/proj3/issues) |
 | Issues are being closed | 3 | Issues are closed after code-related branches were closed |
-| DOI badge: exists | 3 | in README.md (TODO) |
+| DOI badge: exists | 3 | in README.md |
 | Docs: doco generated, format not ugly | 3 | in README |
 | Docs: what: point descriptions of each class/function (in isolation) | 3 | in README |
 | Docs: how: for common use cases X, Y, Z mini-tutorials showing worked examples on how to do X, Y, Z | 3 | in README |
@@ -16,7 +16,7 @@
 | Use of style checkers | 3 | Used flake8 |
 | Use of code formatters | 3 | Used black |
 | Use of syntax checkers | 3 | Used black |
-| Use of code coverage | 3 | travis.yml runs code coverage - TODO |
+| Use of code coverage | 3 | codecov.yml runs code coverage |
 | Other automated analysis tools | 3 | pytest for test cases, command line allows for test to run automatically |
 | Test cases exist | 3 | "test" directory exists with unit tests |
 | Test cases are routinely executed | 3 | tests run before commiting code with the commit_with_test command |
