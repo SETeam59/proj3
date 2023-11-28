@@ -167,7 +167,8 @@ def move_down(event, suggestion_listbox):
 
 # Function to execute GITS command
 def execute_gits_command():
-    command = command_entry_var.get().strip()
+    full_command = command_entry_var.get().strip()
+    command = command_entry_var.get().split()[0]
     if not command:
         result_text.delete(1.0, tk.END)
         result_text.insert(
@@ -180,7 +181,7 @@ def execute_gits_command():
             tk.END, f"Error: Unknown command '{command}'. Please enter a valid GITS command.")
         return
 
-    command = re.findall(r'[^"\s]+|"[^"]*"', command)
+    command = re.findall(r'[^"\s]+|"[^"]*"', full_command)
 
     command_list = ['python3', 'code/gits.py']
     for sub_c in command:
