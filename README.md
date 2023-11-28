@@ -7,7 +7,7 @@
 ![GitHub](https://img.shields.io/badge/language-python-blue.svg)
 ![GitHub](https://img.shields.io/badge/language-shell-orange.svg)
 [![codecov](https://codecov.io/gh/harshitpatel96/GITS/branch/master/graph/badge.svg?token=G6RG52G2YO)](https://codecov.io/gh/harshitpatel96/GITS/)
-[![BLACK](https://img.shields.io/badge/code%20style-black-black.svg)](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html)
+[![FLAKE8](https://img.shields.io/badge/code%20style-flake8-orange.svg)](https://flake8.pycqa.org/en/latest/)
 ![GitHub issues](https://img.shields.io/github/issues/SETeam59/proj3)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/SETeam59/proj3?color=green)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/SETeam59/proj3/proj3)
@@ -15,6 +15,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/SETeam59/proj3)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/SETeam59/proj3)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/SETeam59/proj3)
+![GitHub tag (with filter)](https://img.shields.io/github/v/tag/SETeam59/proj3)
 [![Alt text](http://i3.ytimg.com/vi/XWzKtZcDmKU/maxresdefault.jpg)](https://www.youtube.com/watch?v=XWzKtZcDmKU)
 ### GITS: GIT Simplified
 Have difficulty continually looking up abstract git commands? Welcome to GITS! This project aims to reduce the overhead that is encountered when using git by simplifying certain actions and combining others into a single step. Listed below is all of the offered functionality
@@ -151,15 +152,18 @@ This will open up a browser and you can see all the files. You can click on a pa
 Note: More functionality are being added to this project. Please refer to the 'issues' tab for more information. In case you want to contribute to this project , please refer to 'Contributing.md' file.
 
 ## Style Checker and Analyzer
-We are using black as our style checkers and code analyzer. While contrivuting to this project, make sure you conform to norms dictated by black
+We are using flake8 as our style checker and code analyzer. While contributing to this project, make sure you conform to norms dictated by flake8
 
-### black
+### Flake8
 <b>Installation</b>
-- `python<version> -m pip install black`
+- `python<version> -m pip install flake8`
+If you want Flake8 to be installed for your default Python installation, you can instead use:
+- `python -m pip install flake8`
 
- <b>Using black</b> 
- <br/>To start using black, open an interactive shell and run the following. This will automatically refractor the code according the black guidelines
-- `black path/to/code/to/check.py`
+ <b>Using Flake8</b> 
+ <br/>To start using Flake8, open an interactive shell and run one of the following,
+- `flake8 path/to/code/to/check.py`
+- `flake8 path/to/code/`
 
 This repository is made for CSC 510 Software Engineering Course at NC State University.
 
