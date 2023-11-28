@@ -139,6 +139,28 @@ Example:
 
 ![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
 
+#### gits command history
+The Python script includes a function, gits_cmd_history_func, that displays the command history stored in 'command_history.txt.' It reads and prints the executed commands. The script also references a gits pr_update functionality, ensuring the current branch is ready for a pull request by checking and updating local and upstream master branches to minimize merge conflicts. The script utilizes logging for better process visibility.
+
+Example:
+
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
+
+#### gits squash
+The my_git_squash function uses subprocess to execute a Git squash operation. It resets the last specified number of commits, stages changes, and commits the squashed changes with the provided message. The function prints the process outputs and notifies when the squash is completed, checking the new git log. In case of any exceptions during the operation, it handles errors and returns False.
+
+Example:
+
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
+
+#### gits visualization
+The gits_visualizer function utilizes subprocess to gather information about the last 20 commits and their authors from a Git repository. It then creates an animated visualization, displaying an ASCII art representation of a commit along with the commit history for each unique author. The visualization includes delays to control the animation speed. In case of errors during the process, the function handles them and returns False.
+
+Example:
+
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
+
+
 
 ### pydoc implementation
 We have tried to write as much documentation as possible. You can use pydoc to go through the documentation. 
@@ -157,6 +179,7 @@ We are using flake8 as our style checker and code analyzer. While contributing t
 ### Flake8
 <b>Installation</b>
 - `python<version> -m pip install flake8`
+
 If you want Flake8 to be installed for your default Python installation, you can instead use:
 - `python -m pip install flake8`
 
