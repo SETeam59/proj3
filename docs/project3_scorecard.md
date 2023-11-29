@@ -1,6 +1,6 @@
 | Notes | Score (0 - 3) | Evidence |
 | --- | --- | --- |
-| Video |  | TODO |
+| Video |  | youtube link in both readme.md and proj3 directory readme |
 | Workload is spread over the whole team (one team member is often X times more productive than the others...) | 3 | Responsibility was spread evenly between the group members in terms of functionality but nevertheless, here is a track record that everyone is contributing a lot|
 | Number of commits | 3 | Overall, there were a significant number of quality commits - [Commit History](https://github.com/SETeam59/proj3/commits/master)|
 | Number of commits: by different people | 3 | Note that Saketh commited code under a different account "svruddar" [GitHub Commits](https://github.com/SETeam59/proj3/graphs/contributors) |
@@ -16,19 +16,19 @@
 | Use of style checkers | 3 | Used flake8 |
 | Use of code formatters | 3 | Used black |
 | Use of syntax checkers | 3 | Used black |
-| Use of code coverage | 3 | codecov.yml runs code coverage |
+| Use of code coverage | 3 | travis.yml runs code coverage |
 | Other automated analysis tools | 3 | pytest for test cases, command line allows for test to run automatically |
 | Test cases exist | 3 | "test" directory exists with unit tests |
 | Test cases are routinely executed | 3 | tests run before commiting code with the commit_with_test command |
 | The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up | 3 | [Contributing.md](https://github.com/SETeam59/proj3/blob/master/CONTRIBUTING.md) |
 | Issues are discussed before they are closed | 3 | Relevant discussion is included in Issues |
 | Chat channel: exists | 3 | [WhatsApp Group](https://github.com/SETeam59/proj3/blob/master/docs/Team%2059%20WhatsApp%20Group.png) |
-| Test cases: a large proportion of the issues related to handling failing cases |  | TODO |
+| Test cases: a large proportion of the issues related to handling failing cases |  | Fixed test cases through pull requests and verified the report using codecov |
 | Evidence that the whole team is using the same tools: everyone can get to all tools and files | 3 | All development tools used are free, and the dependency list is available to everyone on GH |
 | Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people) | 3 | Installation steps and requirements.txt file ensure that everyone is using the same tools for development |
 | Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share the screen, they demonstrate the system running on their computer) | 3 | All tools needed for development are listed in the README under the installation section |
 | Evidence that the members of the team are working across multiple places in the code base | 3 | All group members worked on multiple features of the application, see commit history |
-| Short release cycles | 3 | TODO |
+| Short release cycles | 2 | We followed long term release as the product gets linked with the core system bash files. |
 | Online sustainability evaluation |  |  |
 | Does your website and documentation provide a clear, high-level overview of your software? | Y | in README |
 | Does your website and documentation clearly describe the type of user who should use your software? | Y | People who want to use a more simplified version of git for certain actions |
