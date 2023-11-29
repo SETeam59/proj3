@@ -1,17 +1,17 @@
 # Cite as ...
 
-Group 56,
+Group 59,
 GITS,
-October 2023
+November 2023
 
 ```bibtex
 @article{g56:Project 2,
 	title 	  = {GITS : Git Tool},
-	DOI 	  = {10.5281/zenodo.4136759},
-	author    = {Group 56},
+	DOI 	  = {10.5281/zenodo.10212062},
+	author    = {Group 59},
 	publisher = {Zenodo},
 	year      = {2023},
-	month     = {October}
+	month     = {November}
 }
 ```
-[![DOI](https://zenodo.org/badge/302457130.svg)](https://zenodo.org/badge/302457130)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10212062.svg)](https://doi.org/10.5281/zenodo.10212062)
