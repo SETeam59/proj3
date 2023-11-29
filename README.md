@@ -155,7 +155,7 @@ The my_git_squash function uses subprocess to execute a Git squash operation. It
 
 Example:
 
-![image](https://github.com/SETeam59/proj3/blob/master/docs/gits%20alias.png)
+![image](https://github.com/SETeam59/proj3/blob/master/docs/gits_squash.png)
 
 #### gits visualization
 The gits_visualizer function utilizes subprocess to gather information about the last 20 commits and their authors from a Git repository. It then creates an animated visualization, displaying an ASCII art representation of a commit along with the commit history for each unique author. The visualization includes delays to control the animation speed. In case of errors during the process, the function handles them and returns False.
